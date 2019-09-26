@@ -1,9 +1,14 @@
 {
   "name": "@storybook/eslint-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "description": "The config storybook uses to lint code",
-  "keywords": ["eslint", "config", "storybook", "prettier"],
+  "keywords": [
+    "eslint",
+    "config",
+    "storybook",
+    "prettier"
+  ],
   "main": "eslint.config.js",
   "homepage": "https://storybook.js.org/",
   "repository": {
@@ -46,7 +51,9 @@
     "typescript": "^3.4.0"
   },
   "eslintConfig": {
-    "extends": ["./eslint.config.js"]
+    "extends": [
+      "./eslint.config.js"
+    ]
   },
   "collective": {
     "type": "opencollective",
