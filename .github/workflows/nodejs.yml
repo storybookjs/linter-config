@@ -1,0 +1,14 @@
+name: Check
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: install
+      run: yarn
+    - name: run eslint
+      run: yarn test
