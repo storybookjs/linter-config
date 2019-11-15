@@ -1,7 +1,3 @@
-const error = 2;
-const warn = 1;
-const ignore = 0;
-
 module.exports = {
   extends: [
     'airbnb',
@@ -44,7 +40,7 @@ module.exports = {
   },
   rules: {
     'no-restricted-imports': [
-      error,
+      'error',
       {
         paths: [
           {
@@ -67,12 +63,12 @@ module.exports = {
         patterns: ['lodash.*'],
       },
     ],
-    'prettier/prettier': [warn],
-    'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
+    'prettier/prettier': ['warn'],
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'json/*': ['error', 'allowComments'],
-    'class-methods-use-this': ignore,
+    'class-methods-use-this': 'off',
     'import/extensions': [
-      error,
+      'error',
       'always',
       {
         js: 'never',
@@ -82,7 +78,7 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': [
-      error,
+      'error',
       {
         devDependencies: [
           'examples/**',
@@ -99,18 +95,18 @@ module.exports = {
         peerDependencies: true,
       },
     ],
-    'import/prefer-default-export': ignore,
-    'import/default': error,
-    'import/named': error,
-    'import/namespace': error,
+    'import/prefer-default-export': 'off',
+    'import/default': 'error',
+    'import/named': 'error',
+    'import/namespace': 'error',
     'react/jsx-filename-extension': [
-      warn,
+      'warn',
       {
         extensions: ['.js', '.jsx', '.tsx'],
       },
     ],
     'react/jsx-no-bind': [
-      error,
+      'error',
       {
         ignoreDOMComponents: true,
         ignoreRefs: true,
@@ -119,9 +115,9 @@ module.exports = {
         allowBind: true,
       },
     ],
-    'jsx-a11y/accessible-emoji': ignore,
+    'jsx-a11y/accessible-emoji': 'off',
     'jsx-a11y/label-has-associated-control': [
-      warn,
+      'warn',
       {
         labelComponents: ['CustomInputLabel'],
         labelAttributes: ['label'],
@@ -129,17 +125,17 @@ module.exports = {
         depth: 3,
       },
     ],
-    'react/no-unescaped-entities': ignore,
-    'jsx-a11y/label-has-for': [error, { required: { some: ['nesting', 'id'] } }],
+    'react/no-unescaped-entities': 'off',
+    'jsx-a11y/label-has-for': ['error', { required: { some: ['nesting', 'id'] } }],
     'jsx-a11y/anchor-is-valid': [
-      error,
+      'error',
       {
         components: ['A', 'LinkTo', 'Link'],
         specialLink: ['overrideParams', 'kind', 'story', 'to'],
       },
     ],
     'no-underscore-dangle': [
-      error,
+      'error',
       {
         allow: [
           '__STORYBOOK_CLIENT_API__',
@@ -148,13 +144,13 @@ module.exports = {
         ],
       },
     ],
-    '@typescript-eslint/no-var-requires': ignore,
-    '@typescript-eslint/camelcase': ignore,
-    '@typescript-eslint/no-unused-vars': ignore,
-    '@typescript-eslint/explicit-member-accessibility': ignore,
-    '@typescript-eslint/explicit-function-return-type': ignore,
-    '@typescript-eslint/no-explicit-any': ignore, // would prefer to enable this
-    '@typescript-eslint/no-use-before-define': ignore, // this is duplicated
-    '@typescript-eslint/interface-name-prefix': ignore, // I don't agree
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off', // would prefer to enable this
+    '@typescript-eslint/no-use-before-define': 'off', // this is duplicated
+    '@typescript-eslint/interface-name-prefix': 'off', // I don't agree
   },
 };
