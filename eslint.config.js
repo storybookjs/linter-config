@@ -65,6 +65,7 @@ module.exports = {
     ],
     'prettier/prettier': ['warn'],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'json/*': ['error', 'allowComments'],
     'class-methods-use-this': 'off',
     'import/extensions': [
       'error',
