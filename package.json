@@ -1,6 +1,6 @@
 {
   "name": "@storybook/linter-config",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": false,
   "description": "The config storybook uses to lint code",
   "keywords": [
