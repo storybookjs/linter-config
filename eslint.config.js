@@ -8,6 +8,19 @@ module.exports = {
     'prettier/react',
     'prettier/@typescript-eslint',
   ],
+  env: {
+    es6: true,
+    'jest/globals': true,
+    node: true,
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 8,
+    sourceType: 'module',
+  },
   plugins: [
     '@typescript-eslint',
     'prettier',
@@ -18,27 +31,86 @@ module.exports = {
     'json',
     'html',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 8,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  env: { es6: true, node: true, 'jest/globals': true },
-  settings: {
-    'import/core-modules': ['enzyme'],
-    'import/ignore': ['node_modules\\/(?!@storybook)'],
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.tsx', '.mjs', '.d.ts'],
-        paths: ['node_modules/', 'node_modules/@types/'],
-      },
-    },
-    'html/html-extensions': ['.html'],
-  },
   rules: {
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-object-literal-type-assertion': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'class-methods-use-this': 'off',
+    'import/default': 'error',
+    'import/extensions': [
+      'error',
+      'never',
+      {
+        ignorePackages: true,
+        json: 'always',
+        md: 'always',
+        svg: 'always',
+        tag: 'always',
+      },
+    ],
+    'import/named': 'error',
+    'import/namespace': 'error',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          'examples/**',
+          'examples-native/**',
+          '**/example/**',
+          '*.js',
+          '**/*.test.js',
+          '**/*.stories.*',
+          '**/scripts/*.js',
+          '**/stories/**/*.js',
+          '**/__tests__/**/*.js',
+          '**/.storybook/**/*.*',
+        ],
+        peerDependencies: true,
+      },
+    ],
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: ['@storybook'],
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    'json/*': ['error', 'allowComments'],
+    'jsx-a11y/accessible-emoji': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['A', 'LinkTo', 'Link'],
+        specialLink: ['overrideParams', 'kind', 'story', 'to'],
+      },
+    ],
+    'jsx-a11y/label-has-associated-control': [
+      'warn',
+      {
+        controlComponents: ['CustomInput'],
+        depth: 3,
+        labelAttributes: ['label'],
+        labelComponents: ['CustomInputLabel'],
+      },
+    ],
+    'jsx-a11y/label-has-for': [
+      'error',
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
+    'max-classes-per-file': 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-restricted-imports': [
       'error',
       {
@@ -59,79 +131,8 @@ module.exports = {
               'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
           },
         ],
-        // catch-all for any lodash modularised. The CVE is listed against the entire family for lodash < 4.17.11
+        // catch-all for any lodash modularized. The CVE is listed against the entire family for lodash < 4.17.11
         patterns: ['lodash.*'],
-      },
-    ],
-    'prettier/prettier': ['warn'],
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'json/*': ['error', 'allowComments'],
-    'class-methods-use-this': 'off',
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        ts: 'never',
-        tsx: 'never',
-        mjs: 'never',
-      },
-    ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          'examples/**',
-          'examples-native/**',
-          '**/example/**',
-          '*.js',
-          '**/*.test.js',
-          '**/*.stories.*',
-          '**/scripts/*.js',
-          '**/stories/**/*.js',
-          '**/__tests__/**/*.js',
-          '**/.storybook/**/*.*',
-        ],
-        peerDependencies: true,
-      },
-    ],
-    'import/prefer-default-export': 'off',
-    'import/default': 'error',
-    'import/named': 'error',
-    'import/namespace': 'error',
-    'react/jsx-filename-extension': [
-      'warn',
-      {
-        extensions: ['.js', '.jsx', '.tsx'],
-      },
-    ],
-    'react/jsx-no-bind': [
-      'error',
-      {
-        ignoreDOMComponents: true,
-        ignoreRefs: true,
-        allowArrowFunctions: true,
-        allowFunctions: true,
-        allowBind: true,
-      },
-    ],
-    'jsx-a11y/accessible-emoji': 'off',
-    'jsx-a11y/label-has-associated-control': [
-      'warn',
-      {
-        labelComponents: ['CustomInputLabel'],
-        labelAttributes: ['label'],
-        controlComponents: ['CustomInput'],
-        depth: 3,
-      },
-    ],
-    'react/no-unescaped-entities': 'off',
-    'jsx-a11y/label-has-for': ['error', { required: { some: ['nesting', 'id'] } }],
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: ['A', 'LinkTo', 'Link'],
-        specialLink: ['overrideParams', 'kind', 'story', 'to'],
       },
     ],
     'no-underscore-dangle': [
@@ -144,13 +145,58 @@ module.exports = {
         ],
       },
     ],
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/camelcase': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'off', // would prefer to enable this
-    '@typescript-eslint/no-use-before-define': 'off', // this is duplicated
-    '@typescript-eslint/interface-name-prefix': 'off', // I don't agree
+    'prettier/prettier': ['warn'],
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.js', '.jsx', '.tsx'],
+      },
+    ],
+    'react/jsx-fragments': 'off',
+    'react/jsx-no-bind': [
+      'error',
+      {
+        allowArrowFunctions: true,
+        allowBind: true,
+        allowFunctions: true,
+        ignoreDOMComponents: true,
+        ignoreRefs: true,
+      },
+    ],
+    'react/jsx-props-no-spreading': 'off',
+    'react/no-unescaped-entities': 'off',
+    'react/sort-comp': [
+      'error',
+      {
+        groups: {
+          staticLifecycle: ['displayName', 'propTypes', 'defaultProps', 'getDerivedStateFromProps'],
+        },
+        order: [
+          'staticLifecycle',
+          'static-methods',
+          'instance-variables',
+          'lifecycle',
+          '/^on.+$/',
+          '/^(get|set)(?!(DerivedStateFromProps|SnapshotBeforeUpdate$)).+$/',
+          'instance-methods',
+          'instance-variables',
+          'everything-else',
+          'render',
+        ],
+      },
+    ],
+    'react/state-in-constructor': 'off',
+    'react/static-property-placement': 'off',
+  },
+  settings: {
+    'html/html-extensions': ['.html'],
+    'import/core-modules': ['enzyme'],
+    'import/ignore': ['node_modules\\/(?!@storybook)'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.tsx', '.mjs', '.d.ts'],
+        paths: ['node_modules/', 'node_modules/@types/'],
+      },
+    },
   },
 };
