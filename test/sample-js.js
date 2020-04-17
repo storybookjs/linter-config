@@ -9,4 +9,9 @@ const baz = []
   .concat(fooz)
   .concat(fooz)
   .concat(fooz)
+  .concat(fooz)
+  .concat(fooz)
+  .concat(fooz)
   .concat(fooz);
+
+const x = (a) => a;
