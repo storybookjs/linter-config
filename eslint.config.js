@@ -31,6 +31,25 @@ module.exports = {
     'json',
     'html',
   ],
+  overrides: [
+    {
+      files: ['**/*.tsx', '**/*.ts'],
+      rules: {
+        'react/require-default-props': 'off',
+        'react/prop-types': 'off', // we should use types
+        'react/forbid-prop-types': 'off', // we should use types
+        'no-dupe-class-members': 'off', // this is called overloads in typescript
+      },
+    },
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        'vars-on-top': 'off',
+        'no-var': 'off', // this is how typescript works
+        'spaced-comment': 'off',
+      },
+    },
+  ],
   rules: {
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/camelcase': 'off',
