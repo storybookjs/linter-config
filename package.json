@@ -12,7 +12,7 @@
   "homepage": "https://storybook.js.org/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/eslint-config.git"
+    "url": "https://github.com/storybookjs/linter-config.git"
   },
   "license": "ISC",
   "author": "Norbert de Langen",
