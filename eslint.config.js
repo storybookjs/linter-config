@@ -37,12 +37,6 @@ module.exports = {
         'spaced-comment': 'off',
       },
     },
-    {
-      files: ['examples/**', 'app/**'],
-      rules: {
-        'react-hooks/rules-of-hooks': 'off',
-      },
-    },
   ],
   rules: {
     '@typescript-eslint/ban-ts-ignore': 'off',
