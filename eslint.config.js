@@ -16,7 +16,6 @@ module.exports = {
     },
     ecmaVersion: 8,
     sourceType: 'module',
-    project: ['./tsconfig.json'],
     extraFileExtensions: ['.html', '.md', '.json', '.svg', '.tag'],
   },
   plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json', 'html'],
