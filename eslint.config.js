@@ -16,6 +16,7 @@ module.exports = {
     },
     ecmaVersion: 8,
     sourceType: 'module',
+    project: ['./'],
   },
   plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json', 'html'],
   overrides: [
