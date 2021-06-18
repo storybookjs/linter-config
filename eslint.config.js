@@ -4,7 +4,6 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:import/react-native',
     'prettier',
-    'prettier/@typescript-eslint',
   ],
   env: {
     es6: true,
