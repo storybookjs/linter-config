@@ -1,9 +1,8 @@
 module.exports = {
   extends: [
-    'airbnb',
+    'airbnb-typescript',
     'plugin:jest/recommended',
     'plugin:import/react-native',
-    'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/react',
     'prettier/@typescript-eslint',
@@ -13,7 +12,6 @@ module.exports = {
     'jest/globals': true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -21,16 +19,7 @@ module.exports = {
     ecmaVersion: 8,
     sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint',
-    'prettier',
-    'jest',
-    'import',
-    'react',
-    'jsx-a11y',
-    'json',
-    'html',
-  ],
+  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json', 'html'],
   overrides: [
     {
       files: ['**/*.tsx', '**/*.ts'],
@@ -47,6 +36,12 @@ module.exports = {
         'vars-on-top': 'off',
         'no-var': 'off', // this is how typescript works
         'spaced-comment': 'off',
+      },
+    },
+    {
+      files: ['examples/**', 'app/**'],
+      rules: {
+        'react-hooks/rules-of-hooks': 'off',
       },
     },
   ],
