@@ -16,7 +16,8 @@ module.exports = {
     },
     ecmaVersion: 8,
     sourceType: 'module',
-    project: ['./'],
+    project: ['./tsconfig.json'],
+    extraFileExtensions: ['.html', '.md', '.json', '.svg', '.tag'],
   },
   plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json', 'html'],
   overrides: [
@@ -26,7 +27,6 @@ module.exports = {
         'react/require-default-props': 'off',
         'react/prop-types': 'off', // we should use types
         'react/forbid-prop-types': 'off', // we should use types
-        'no-dupe-class-members': 'off', // this is called overloads in typescript
       },
     },
     {

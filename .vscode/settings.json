@@ -1,4 +1,5 @@
 {
-  "eslint.enable": true,
-  "deepscan.enable": true
+  "deepscan.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
