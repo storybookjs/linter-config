@@ -4,7 +4,9 @@ const foo = 'baz';
 
 const fooz = [foo, foo, foo, foo, foo, foo];
 
-const baz = []
+const bazArray: string[] = [];
+
+const baz = bazArray
   .concat(fooz)
   .concat(fooz)
   .concat(fooz)
@@ -14,4 +16,4 @@ const baz = []
   .concat(fooz)
   .concat(fooz);
 
-const x = (a) => a;
+const x = (a: unknown) => a;
