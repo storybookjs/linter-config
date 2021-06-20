@@ -19,7 +19,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2020,
+    ecmaVersion: 8,
     sourceType: 'module',
     extraFileExtensions: ['.html', '.md', '.json', '.svg', '.tag'],
   },
