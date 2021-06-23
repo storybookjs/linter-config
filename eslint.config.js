@@ -1,36 +1,42 @@
 module.exports = {
   extends: [
-    'airbnb',
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:eslint-comments/recommended',
     'plugin:jest/recommended',
     'plugin:import/react-native',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
   ],
+  plugins: ['@typescript-eslint', 'import', 'json', 'html', 'jsx-a11y', 'prettier'],
   env: {
     es6: true,
     'jest/globals': true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 8,
     sourceType: 'module',
+    extraFileExtensions: ['.html', '.md', '.json', '.svg', '.tag'],
   },
-  plugins: [
-    '@typescript-eslint',
-    'prettier',
-    'jest',
-    'import',
-    'react',
-    'jsx-a11y',
-    'json',
-    'html',
-  ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'html/html-extensions': ['.html'],
+    'import/core-modules': ['enzyme'],
+    'import/ignore': ['node_modules\\/(?!@storybook)'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.tsx', '.mjs', '.d.ts'],
+        paths: ['node_modules/', 'node_modules/@types/'],
+      },
+    },
+  },
   overrides: [
     {
       files: ['**/*.tsx', '**/*.ts'],
@@ -38,7 +44,6 @@ module.exports = {
         'react/require-default-props': 'off',
         'react/prop-types': 'off', // we should use types
         'react/forbid-prop-types': 'off', // we should use types
-        'no-dupe-class-members': 'off', // this is called overloads in typescript
       },
     },
     {
@@ -140,6 +145,11 @@ module.exports = {
               'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
           },
           {
+            name: 'lodash.uniqueId',
+            message:
+              'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
+          },
+          {
             name: 'lodash.mergewith',
             message:
               'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
@@ -150,7 +160,8 @@ module.exports = {
               'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
           },
         ],
-        // catch-all for any lodash modularized. The CVE is listed against the entire family for lodash < 4.17.11
+        // catch-all for any lodash modularized.
+        // The CVE is listed against the entire family for lodash < 4.17.11
         patterns: ['lodash.*'],
       },
     ],
@@ -164,7 +175,6 @@ module.exports = {
         ],
       },
     ],
-    'prettier/prettier': ['warn'],
     'react/jsx-filename-extension': [
       'warn',
       {
@@ -206,16 +216,5 @@ module.exports = {
     ],
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
-  },
-  settings: {
-    'html/html-extensions': ['.html'],
-    'import/core-modules': ['enzyme'],
-    'import/ignore': ['node_modules\\/(?!@storybook)'],
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.tsx', '.mjs', '.d.ts'],
-        paths: ['node_modules/', 'node_modules/@types/'],
-      },
-    },
   },
 };
