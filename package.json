@@ -2,12 +2,7 @@
   "name": "@storybook/linter-config",
   "version": "3.1.2",
   "description": "The config storybook uses to lint code",
-  "keywords": [
-    "config",
-    "eslint",
-    "prettier",
-    "storybook"
-  ],
+  "keywords": ["config", "eslint", "prettier", "storybook"],
   "homepage": "https://storybook.js.org/",
   "repository": {
     "type": "git",
@@ -16,14 +11,9 @@
   "license": "ISC",
   "author": "Norbert de Langen",
   "main": "index.js",
-  "files": [
-    ".eslintrc.js",
-    "index.js",
-    "prettier.config.js",
-    "cspell.shared.yml"
-  ],
+  "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
-    "lint": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs|json) ./*.@(js|jsx|ts|tsx|cjs|mjs|json) --fix",
+    "lint": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs) ./*.@(js|jsx|ts|tsx|cjs|mjs) --fix",
     "lint:html": "prettier !(node_modules)/**/*.@(html) ./*.@(html) --write --list-different",
     "lint:json": "prettier !(node_modules)/**/*.@(json) ./*.@(json) --write --list-different",
     "lint:md": "prettier !(node_modules)/**/*.@(md|markdown) ./*.@(md|markdown) --write --list-different",
