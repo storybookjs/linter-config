@@ -170,11 +170,7 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: [
-          '__STORYBOOK_CLIENT_API__',
-          '__STORYBOOK_ADDONS_CHANNEL__',
-          '__STORYBOOK_STORY_STORE__',
-        ],
+        allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__', '__STORYBOOK_STORY_STORE__'],
       },
     ],
     'react/jsx-filename-extension': [

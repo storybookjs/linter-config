@@ -17,3 +17,5 @@ const baz = bazArray
   .concat(fooz);
 
 const x = (a: unknown) => a;
+
+console.log({ baz, x });

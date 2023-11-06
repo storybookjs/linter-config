@@ -11,6 +11,7 @@ All contributions are welcome.
 config can be found at: `./eslint.config.js`
 
 **We extend from:**
+
 - airbnb
 - plugin:jest/recommended
 - plugin:import/react-native
@@ -20,6 +21,7 @@ config can be found at: `./eslint.config.js`
 - prettier/@typescript-eslint
 
 **We have plugins for:**
+
 - @typescript-eslint
 - prettier
 - jest

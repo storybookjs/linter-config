@@ -1,0 +1,20 @@
+language: en,en-US
+dictionaries:
+  - filetypes
+  - fonts
+  - html
+  - node
+  - npm
+  - TypeScript
+words:
+  - addon
+  - addons
+  - automigrate
+  - automigration
+  - codemod
+  - codemods
+  - hmr
+  - params
+  - polyfill
+  - transpiling
+  - webcomponents

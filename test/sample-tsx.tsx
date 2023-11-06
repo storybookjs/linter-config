@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { FC, useEffect, useState } from 'react';
 
 interface SampleProps {
@@ -16,6 +15,5 @@ export const Sample: FC<SampleProps> = ({ title }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Change true to something else to test jsx-a11y
   return <div aria-busy="true">{state}</div>;
 };

@@ -1,7 +1,6 @@
 {
   "name": "@storybook/linter-config",
   "version": "3.1.2",
-  "private": false,
   "description": "The config storybook uses to lint code",
   "keywords": [
     "config",
@@ -16,60 +15,48 @@
   },
   "license": "ISC",
   "author": "Norbert de Langen",
-  "files": [
-    "README.md",
-    "eslint.config.js",
-    "index.js",
-    "remark.config.js",
-    "prettier.config.js"
-  ],
   "main": "index.js",
-  "eslintConfig": {
-    "extends": [
-      "./eslint.config.js"
-    ],
-    "parserOptions": {
-      "project": [
-        "./tsconfig.json"
-      ]
-    }
-  },
+  "files": [
+    ".eslintrc.js",
+    "index.js",
+    "prettier.config.js",
+    "cspell.shared.yml"
+  ],
   "scripts": {
-    "test": "npm run test:eslint && npm run test:conflicts",
-    "test:eslint": "eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives ./test",
-    "test:conflicts": "eslint-config-prettier eslint.config.js"
+    "lint": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs|json) ./*.@(js|jsx|ts|tsx|cjs|mjs|json) --fix",
+    "lint:html": "prettier !(node_modules)/**/*.@(html) ./*.@(html) --write",
+    "lint:json": "eslint !(node_modules)/**/*.@(json) ./*.@(json) --fix",
+    "lint:md": "prettier !(node_modules)/**/*.@(md|markdown) ./*.@(md|markdown) --write",
+    "lint:yml": "prettier !(node_modules)/**/*.@(yaml|yml) ./*.@(yaml|yml) --write"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-html": "^6.1.2",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-json": "^3.0.0",
-    "eslint-plugin-json-files": "^1.1.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-progress": "^0.0.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "remark-cli": "^9.0.0",
-    "remark-lint": "^8.0.0",
-    "remark-preset-lint-recommended": "^5.0.0"
+    "@cspell/eslint-plugin": "^7.3.8",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-file-progress": "^1.3.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jsonc-eslint-parser": "^2.4.0",
+    "prettier": "^3.0.3",
+    "vfile-reporter": "^8.1.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.11",
-    "eslint": "^7.28.0",
-    "jest": "^27.0.4",
-    "prettier": "^2.3.1",
-    "react": "17.0.1",
-    "remark": "^13.0.0",
-    "typescript": "^4.3.4"
+    "@types/react": "^18.2.34",
+    "react": "^18.2.0",
+    "typescript": "^5.2.2"
   },
-  "peerDependencies": {
-    "remark": "^12.0.0 || ^13.0.0"
-  },
+  "packageManager": "yarn@4.0.1",
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
