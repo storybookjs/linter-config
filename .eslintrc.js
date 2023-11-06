@@ -19,7 +19,6 @@ module.exports = {
     'html',
     'react',
     'file-progress',
-    'json-format',
   ],
   rules: {
     '@eslint-community/eslint-comments/disable-enable-pair': [

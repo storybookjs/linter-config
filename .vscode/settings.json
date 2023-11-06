@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -26,8 +26,8 @@
   "editor.tabSize": 2,
   "eslint.codeActionsOnSave.rules": null,
   "eslint.format.enable": true,
-  "eslint.probe": ["json", "javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.validate": ["json", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "files.eol": "\n",
   "github.copilot.enable": {
     "*": true,
