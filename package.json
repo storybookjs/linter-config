@@ -13,7 +13,7 @@
   "main": "index.js",
   "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
-    "lint:c": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs) --fix",
+    "lint:code": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs) --fix",
     "lint:html": "prettier ./**/*.@(html) --write --list-different",
     "lint:json": "prettier **/!(package).json --write --list-different",
     "lint:md": "prettier ./**/*.@(md|markdown) --write --list-different",

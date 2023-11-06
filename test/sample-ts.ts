@@ -19,3 +19,7 @@ const baz = bazArray
 const x = (a: unknown) => a;
 
 console.log({ baz, x });
+
+if (fooz.includes('baz')) {
+  console.log('baz');
+}

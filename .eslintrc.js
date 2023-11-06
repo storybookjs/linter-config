@@ -42,11 +42,27 @@ module.exports = {
         tag: 'always',
       },
     ],
+
+    'default-case': 'error',
+    'func-name-matching': 'error',
+    'func-names': ['error', 'as-needed'],
+    'no-caller': 'error',
+    'no-labels': 'error',
+    'no-lonely-if': 'error',
+    'no-multi-assign': 'error',
+    'no-useless-concat': 'error',
+    'prefer-destructuring': 'error',
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    curly: ['error', 'all'],
+    eqeqeq: 'error',
+    radix: 'error',
+
     'import/no-cycle': 'error',
     'import/no-default-export': 'error',
     'import/no-deprecated': 'warn',
     'import/order': 'error',
-    'prefer-destructuring': 'error',
   },
   settings: {
     react: {
