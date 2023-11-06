@@ -8,33 +8,12 @@ All contributions are welcome.
 
 ## ESlint
 
-config can be found at: `./eslint.config.js`
-
-**We extend from:**
-
-- airbnb
-- plugin:jest/recommended
-- plugin:import/react-native
-- plugin:@typescript-eslint/recommended
-- prettier
-- prettier/react
-- prettier/@typescript-eslint
-
-**We have plugins for:**
-
-- @typescript-eslint
-- prettier
-- jest
-- import
-- react
-- jsx-a11y
-- json
-- html
+config can be found at: `./.eslintrc.js`
 
 ## Prettier
 
 config can be found at `./prettier.config.js`
 
-## Remark
+## cSpell
 
-config can be found at `./remark.config.js`
+config can be found at `./cspell.shared.yml`
