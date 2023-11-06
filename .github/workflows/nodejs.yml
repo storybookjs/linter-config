@@ -10,7 +10,7 @@ jobs:
       - name: install
         run: yarn
       - name: js|jsx|ts|tsx|cjs|mjs
-        run: yarn lint
+        run: yarn lint:code
       - name: html
         run: yarn lint:html
       - name: json
