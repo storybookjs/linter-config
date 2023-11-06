@@ -9,5 +9,15 @@ jobs:
       - uses: actions/checkout@v1
       - name: install
         run: yarn
-      - name: run eslint
-        run: yarn test
+      - name: js|jsx|ts|tsx|cjs|mjs
+        run: yarn lint
+      - name: html
+        run: yarn lint:html
+      - name: json
+        run: yarn lint:json
+      - name: md
+        run: yarn lint:md
+      - name: package
+        run: yarn lint:package
+      - name: yml
+        run: yarn lint:yml
