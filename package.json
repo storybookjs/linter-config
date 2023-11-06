@@ -17,7 +17,7 @@
     "lint:html": "prettier ./**/*.@(html) --write --list-different",
     "lint:json": "prettier **/!(package).json --write --list-different",
     "lint:md": "prettier ./**/*.@(md|markdown) --write --list-different",
-    "lint:package": "sort-package-json ./**/package.json",
+    "lint:package": "sort-package-json ./**/package.json && prettier **/package.json --write --list-different",
     "lint:yml": "prettier ./**/*.@(yaml|yml) --write --list-different"
   },
   "dependencies": {
