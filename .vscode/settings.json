@@ -21,7 +21,8 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.sortPackageJson": true
   },
   "editor.tabSize": 2,
   "eslint.codeActionsOnSave.rules": null,

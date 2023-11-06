@@ -14,11 +14,11 @@
   "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
     "lint": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs|json) ./*.@(js|jsx|ts|tsx|cjs|mjs|json) --fix",
-    "lint:html": "prettier !(node_modules)/**/*.@(html) ./*.@(html) --write",
-    "lint:json": "prettier !(node_modules)/**/*.@(json) ./*.@(json) --write",
-    "lint:md": "prettier !(node_modules)/**/*.@(md|markdown) ./*.@(md|markdown) --write",
-    "lint:yml": "prettier !(node_modules)/**/*.@(yaml|yml) ./*.@(yaml|yml) --write",
-    "lint:package": "sort-package-json !(node_modules)/**/package.json ./package.json"
+    "lint:html": "prettier !(node_modules)/**/*.@(html) ./*.@(html) --write --list-different",
+    "lint:json": "prettier !(node_modules)/**/*.@(json) ./*.@(json) --write --list-different",
+    "lint:md": "prettier !(node_modules)/**/*.@(md|markdown) ./*.@(md|markdown) --write --list-different",
+    "lint:package": "sort-package-json !(node_modules)/**/package.json ./package.json",
+    "lint:yml": "prettier !(node_modules)/**/*.@(yaml|yml) ./*.@(yaml|yml) --write --list-different"
   },
   "dependencies": {
     "@cspell/eslint-plugin": "^7.3.8",
