@@ -25,6 +25,7 @@
     "source.sortPackageJson": true
   },
   "editor.tabSize": 2,
+  "editor.formatOnSave": true,
   "eslint.codeActionsOnSave.rules": null,
   "eslint.format.enable": true,
   "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],

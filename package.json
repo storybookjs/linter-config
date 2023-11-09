@@ -18,7 +18,8 @@
     "lint:json": "prettier **/!(package).json --write --list-different",
     "lint:md": "prettier ./**/*.@(md|markdown) --write --list-different",
     "lint:package": "sort-package-json ./**/package.json && prettier **/package.json --write --list-different",
-    "lint:yml": "prettier ./**/*.@(yaml|yml) --write --list-different"
+    "lint:yml": "prettier ./**/*.@(yaml|yml) --write --list-different",
+    "release": "auto shipit"
   },
   "dependencies": {
     "@cspell/eslint-plugin": "^7.3.8",
@@ -42,7 +43,10 @@
     "sort-package-json": "^2.6.0"
   },
   "devDependencies": {
+    "@auto-it/first-time-contributor": "^11.0.4",
+    "@auto-it/released": "^11.0.4",
     "@types/react": "^18.2.34",
+    "auto": "^11.0.4",
     "react": "^18.2.0",
     "typescript": "^5.2.2"
   },
@@ -50,5 +54,9 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "auto": {
+    "prereleaseBranches": ["next", "prerelease"],
+    "plugins": ["npm", "first-time-contributor", "released"]
   }
 }
