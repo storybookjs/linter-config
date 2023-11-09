@@ -13,6 +13,7 @@
   "main": "index.js",
   "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
+    "postinstall": "yarn lint:package",
     "lint:code": "eslint ./test/**/*.@(js|jsx|ts|tsx|cjs|mjs) --fix",
     "lint:html": "prettier ./**/*.@(html) --write --list-different",
     "lint:json": "prettier **/!(package).json --write --list-different",
@@ -51,12 +52,12 @@
     "typescript": "^5.2.2"
   },
   "packageManager": "yarn@4.0.1",
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/storybook"
-  },
   "auto": {
     "prereleaseBranches": ["next", "prerelease"],
     "plugins": ["npm", "first-time-contributor", "released"]
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/storybook"
   }
 }
