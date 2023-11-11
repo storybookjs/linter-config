@@ -18,3 +18,8 @@ words:
   - polyfill
   - transpiling
   - webcomponents
+  - metas
+  - viewports
+  - autodocs
+  - testid
+  - loglevel

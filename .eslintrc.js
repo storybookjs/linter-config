@@ -59,6 +59,7 @@ module.exports = {
     'no-lonely-if': 'error',
     'no-multi-assign': 'error',
     'no-useless-concat': 'error',
+    'no-useless-constructor': 'off',
     'prefer-destructuring': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
@@ -69,6 +70,7 @@ module.exports = {
     camelcase: ['error', { ignoreImports: true, ignoreGlobals: true, allow: ['^.+_.+'] }],
 
     '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/ban-types': 'warn',
   },
   overrides: [
     {
