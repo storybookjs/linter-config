@@ -14,7 +14,7 @@
   "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
     "postinstall": "husky install && yarn lint:package",
-    "lint": "eslint",
+    "lint": "NODE_ENV=production eslint --resolve-plugins-relative-to=./ --cache --cache-location=./.cache/eslint",
     "lint:code": "yarn lint \"./test/**/*.@(js|jsx|ts|tsx|cjs|mjs)\" --fix",
     "lint:html": "prettier \"./**/*.html\" --write --list-different",
     "lint:json": "prettier \"**/!(package).json\" --write --list-different",

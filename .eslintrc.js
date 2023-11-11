@@ -70,6 +70,14 @@ module.exports = {
 
     '@typescript-eslint/no-explicit-any': 'warn',
   },
+  overrides: [
+    {
+      files: ['*.stories.*'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',
