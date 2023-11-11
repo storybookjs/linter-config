@@ -15,9 +15,9 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: [
     // order is important!
-    '@typescript-eslint',
     'html',
     'react',
+    '@typescript-eslint',
     'file-progress',
   ],
   rules: {
@@ -42,6 +42,14 @@ module.exports = {
         tag: 'always',
       },
     ],
+    'import/no-cycle': 'error',
+    'import/no-default-export': 'error',
+    'import/no-deprecated': 'warn',
+    'import/order': 'error',
+    'import/no-unresolved': 'off',
+
+    'react/prop-types': 'off',
+    'react/no-unescaped-entities': ['error', { forbid: ['>', '}'] }],
 
     'default-case': 'error',
     'func-name-matching': 'error',
@@ -58,11 +66,9 @@ module.exports = {
     curly: ['error', 'all'],
     eqeqeq: 'error',
     radix: 'error',
+    camelcase: ['error', { ignoreImports: true, ignoreGlobals: true, allow: ['^.+_.+'] }],
 
-    'import/no-cycle': 'error',
-    'import/no-default-export': 'error',
-    'import/no-deprecated': 'warn',
-    'import/order': 'error',
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
   settings: {
     react: {
