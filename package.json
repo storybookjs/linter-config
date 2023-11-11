@@ -13,6 +13,7 @@
   "main": "index.js",
   "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
+    "postinstall": "husky install && yarn lint:package",
     "lint": "eslint",
     "lint:code": "yarn lint \"./test/**/*.@(js|jsx|ts|tsx|cjs|mjs)\" --fix",
     "lint:html": "prettier \"./**/*.html\" --write --list-different",
@@ -20,7 +21,8 @@
     "lint:md": "prettier \"./**/*.@(md|markdown)\" --write --list-different",
     "lint:package": "sort-package-json ./package.json && prettier \"**/package.json\" --write --list-different",
     "lint:yml": "prettier \"./**/*.@(yaml|yml)\" --write --list-different",
-    "prepare": "yarn lint:package && husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
     "release": "auto shipit"
   },
   "lint-staged": {
@@ -60,8 +62,9 @@
     "@auto-it/released": "^11.0.4",
     "@types/react": "^18.2.37",
     "auto": "^11.0.4",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^15.0.2",
+    "pinst": "^3.0.0",
     "react": "^18.2.0",
     "typescript": "^5.2.2"
   },
