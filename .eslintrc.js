@@ -71,6 +71,7 @@ module.exports = {
 
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/ban-types': 'warn',
+    '@typescript-eslint/no-empty-function': 'off',
   },
   overrides: [
     {
