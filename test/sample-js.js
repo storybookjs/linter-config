@@ -1,6 +1,6 @@
 // this file should have prettier and eslint enabled!
 import json from './sample-json.json';
-import ts from './sample-ts';
+import { ts } from './sample-ts';
 
 const foo = 'baz';
 

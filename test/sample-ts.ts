@@ -24,3 +24,5 @@ console.log({ baz, x, Sample });
 if (fooz.includes('baz')) {
   console.log('baz');
 }
+
+export const ts = 5;
