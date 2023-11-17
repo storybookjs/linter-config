@@ -1,4 +1,5 @@
 // this file should have prettier and eslint enabled!
+import { Sample } from './sample-tsx';
 
 const foo = 'baz';
 
@@ -18,7 +19,7 @@ const baz = bazArray
 
 const x = (a: unknown) => a;
 
-console.log({ baz, x });
+console.log({ baz, x, Sample });
 
 if (fooz.includes('baz')) {
   console.log('baz');
