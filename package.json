@@ -1,14 +1,8 @@
 {
   "name": "@storybook/linter-config",
   "version": "3.1.2",
-  "private": false,
   "description": "The config storybook uses to lint code",
-  "keywords": [
-    "config",
-    "eslint",
-    "prettier",
-    "storybook"
-  ],
+  "keywords": ["config", "eslint", "prettier", "storybook"],
   "homepage": "https://storybook.js.org/",
   "repository": {
     "type": "git",
@@ -16,59 +10,69 @@
   },
   "license": "ISC",
   "author": "Norbert de Langen",
-  "files": [
-    "README.md",
-    "eslint.config.js",
-    "index.js",
-    "remark.config.js",
-    "prettier.config.js"
-  ],
   "main": "index.js",
-  "eslintConfig": {
-    "extends": [
-      "./eslint.config.js"
-    ],
-    "parserOptions": {
-      "project": [
-        "./tsconfig.json"
-      ]
-    }
-  },
+  "files": [".eslintrc.js", "index.js", "prettier.config.js", "cspell.shared.yml"],
   "scripts": {
-    "test": "npm run test:eslint && npm run test:conflicts",
-    "test:eslint": "eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives ./test",
-    "test:conflicts": "eslint-config-prettier eslint.config.js"
+    "postinstall": "husky install && yarn lint:package",
+    "lint": "NODE_ENV=production eslint --resolve-plugins-relative-to=./ --cache --cache-location=./.cache/eslint",
+    "lint:code": "yarn lint \"./test/**/*.@(js|jsx|ts|tsx|cjs|mjs)\" --fix",
+    "lint:html": "prettier \"./**/*.html\" --write --list-different",
+    "lint:json": "prettier \"**/!(package).json\" --write --list-different",
+    "lint:md": "prettier \"./**/*.@(md|markdown)\" --write --list-different",
+    "lint:package": "sort-package-json ./package.json && prettier \"**/package.json\" --write --list-different",
+    "lint:yml": "prettier \"./**/*.@(yaml|yml)\" --write --list-different",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "release": "auto shipit"
   },
+  "lint-staged": {
+    "*.html": ["prettier --write --list-different"],
+    "*.json": ["prettier --write --list-different"],
+    "*.{js,jsx,mjs,ts,tsx}": ["yarn eslint --fix"],
+    "package.json": ["sort-package-json", "prettier --write --list-different"],
+    "*.ejs": ["ejslint"],
+    "*.yml": ["prettier --write --list-different"],
+    "*.md": ["prettier --write --list-different"]
+  },
+  "browserslist": ["defaults"],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-html": "^6.1.2",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-json": "^3.0.0",
-    "eslint-plugin-json-files": "^1.1.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-progress": "^0.0.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "remark-cli": "^9.0.0",
-    "remark-lint": "^8.0.0",
-    "remark-preset-lint-recommended": "^5.0.0"
+    "@cspell/eslint-plugin": "^8.0.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "ejs-lint": "^2.0.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-file-progress": "^1.3.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-i": "^2.29.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.0",
+    "sort-package-json": "^2.6.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.11",
-    "eslint": "^7.28.0",
-    "jest": "^27.0.4",
-    "prettier": "^2.3.1",
-    "react": "17.0.1",
-    "remark": "^13.0.0",
-    "typescript": "^4.3.4"
+    "@auto-it/first-time-contributor": "^11.0.4",
+    "@auto-it/released": "^11.0.4",
+    "@types/react": "^18.2.37",
+    "auto": "^11.0.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "pinst": "^3.0.0",
+    "react": "^18.2.0",
+    "typescript": "^5.2.2"
   },
-  "peerDependencies": {
-    "remark": "^12.0.0 || ^13.0.0"
+  "packageManager": "yarn@4.0.1",
+  "auto": {
+    "prereleaseBranches": ["next", "prerelease"],
+    "plugins": ["npm", "first-time-contributor", "released"]
   },
   "collective": {
     "type": "opencollective",

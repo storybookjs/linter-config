@@ -1,0 +1,4 @@
+import:
+  - cspell.shared.yml
+words:
+  - fooz
