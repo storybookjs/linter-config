@@ -2,6 +2,7 @@
   "name": "@storybook/linter-config",
   "version": "3.1.2",
   "private": false,
+  "type": "module",
   "description": "The config storybook uses to lint code",
   "keywords": [
     "config",
