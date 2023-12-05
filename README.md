@@ -8,7 +8,7 @@ All contributions are welcome.
 
 ## ESlint
 
-config can be found at: `./eslint.config.js`
+config can be found at: `./eslint.config.cjs`
 
 **We extend from:**
 - airbnb
@@ -35,4 +35,4 @@ config can be found at `./prettier.config.js`
 
 ## Remark
 
-config can be found at `./remark.config.js`
+config can be found at `./remark.config.cjs`
