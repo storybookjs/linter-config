@@ -3,11 +3,5 @@ export default {
   tabWidth: 2,
   bracketSpacing: true,
   trailingComma: 'es5',
-  singleQuote: true,
-  overrides: [
-    {
-      files: '*.html',
-      options: { parser: 'babel' },
-    },
-  ],
+  singleQuote: true
 };
