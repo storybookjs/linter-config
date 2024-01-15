@@ -35,7 +35,7 @@
     }
   },
   "scripts": {
-    "test": "npm run test:eslint && npm run test:conflicts",
+    "test": "pnpm run test:eslint && pnpm run test:conflicts",
     "test:eslint": "eslint -c package.json --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives ./test",
     "test:conflicts": "eslint-config-prettier eslint.config.js"
   },
