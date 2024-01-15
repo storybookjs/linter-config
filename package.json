@@ -1,6 +1,6 @@
 {
   "name": "@storybook/linter-config",
-  "version": "4.0.0",
+  "version": "3.1.2",
   "private": false,
   "description": "The config storybook uses to lint code",
   "keywords": [
@@ -37,7 +37,8 @@
   "scripts": {
     "test": "pnpm run test:eslint && pnpm run test:conflicts",
     "test:eslint": "eslint -c package.json --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives ./test",
-    "test:conflicts": "eslint-config-prettier eslint.config.js"
+    "test:conflicts": "eslint-config-prettier eslint.config.js",
+    "release": "auto shipit"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.18.1",
@@ -45,13 +46,13 @@
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-file-progress": "^1.3.0",
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-json-files": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-file-progress": "^1.3.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "remark-cli": "^12.0.0",
@@ -60,6 +61,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.48",
+    "auto": "^11.0.4",
     "eslint": "^8.56.0",
     "prettier": "^3.2.2",
     "react": "^18.2.0",
@@ -72,5 +74,11 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "released"
+    ]
   }
 }
